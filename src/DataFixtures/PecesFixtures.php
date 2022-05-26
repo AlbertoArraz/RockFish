@@ -13,7 +13,7 @@ class PecesFixtures extends Fixture
         for ($i = 1; $i <= 10; $i++) {
             $product = new Pez();
             $product
-                ->setNombre('Product ' . $i)
+                ->setNombre('Pez ' . $i)
                 ->setDescripcion('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua')
                 ->setPrecio(mt_rand(10, 600));
 
