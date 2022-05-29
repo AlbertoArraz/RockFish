@@ -3,13 +3,15 @@
 {% block body %}
 <div class="container">
     <h1 class="mt-3 mb-4">Peces</h1>
+    <a href="{{ path('pez.crear') }}" class="btn btn-primary">Crear pez</a>
+    <hr>
     <div class="row">
         {% for pez in peces %}
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="https://via.placeholder.com/200x150" alt="{{ pez.nombre }}" class="card-img-top">
+                    <img src="{{asset('img_pez/' ~ pez.imagen)}}" alt="{{ pez.nombre }}" class="card-img-top" width="200" height="200">
                     <div class="card-body">
-                        <h5 class="card-title">{{ pez.nombre }}</h5>
+                        <h5 class="card-title m-0">{{ pez.nombre }}</h5>
                         <p class="card-text">{{ pez.descripcion }}</p>
                         <div class="d-flex justify-content-between align-item-center">
                             <a href="{{ path('pez.detalles', {id: pez.id}) }}" class="btn btn-dark">Ver detalles</a>

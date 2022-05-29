@@ -14,7 +14,7 @@ class Tipo
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $Nombre;
+    private $nombre;
 
     #[ORM\Column(type: 'text', nullable: true)]
     private $descripcion;
@@ -26,12 +26,12 @@ class Tipo
 
     public function getNombre(): ?string
     {
-        return $this->Nombre;
+        return $this->nombre;
     }
 
-    public function setNombre(string $Nombre): self
+    public function setNombre(string $nombre): self
     {
-        $this->Nombre = $Nombre;
+        $this->nombre = $nombre;
 
         return $this;
     }
@@ -46,5 +46,10 @@ class Tipo
         $this->descripcion = $descripcion;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nombre;
     }
 }

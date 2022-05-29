@@ -22,6 +22,13 @@ class Pez
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $descripcion;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $imagen;
+
+    #[ORM\ManyToOne(targetEntity: Tipo::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private $tipo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +42,18 @@ class Pez
     public function setNombre(string $nombre): self
     {
         $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    public function getImagen(): ?string
+    {
+        return $this->imagen;
+    }
+
+    public function setImagen(string $imagen): self
+    {
+        $this->imagen = $imagen;
 
         return $this;
     }
@@ -59,6 +78,18 @@ class Pez
     public function setDescripcion(?string $descripcion): self
     {
         $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    public function getTipo(): ?Tipo
+    {
+        return $this->tipo;
+    }
+
+    public function setTipo(?Tipo $tipo): self
+    {
+        $this->tipo = $tipo;
 
         return $this;
     }

@@ -60,8 +60,8 @@ class Order
         foreach ($this->getItems() as $existingItem) {
             // The item already exists, update the quantity
             if ($existingItem->equals($item)) {
-                $existingItem->setQuantity(
-                    $existingItem->getQuantity() + $item->getQuantity()
+                $existingItem->setCantidad(
+                    $existingItem->getCantidad() + $item->getCantidad()
                 );
                 return $this;
             }
