@@ -35,7 +35,7 @@ class CartController extends AbstractController
         ]);
     }
 
-    #[Route('/borrar/item/{id}', name: 'item.borrar')]
+    #[Route('/item/borrar/{id}', name: 'item.borrar')]
     public function borrarItem(ManagerRegistry $doctrine,$id)
     {
         $entityManager = $doctrine->getManager();
@@ -51,7 +51,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute('cart');
     }
 
-    #[Route('/borrar/items{id}', name: 'items.borrar')]
+    #[Route('/items/borrar{id}', name: 'items.borrar')]
     public function borrarItems(ManagerRegistry $doctrine,$id)
     {
         $entityManager = $doctrine->getManager();
