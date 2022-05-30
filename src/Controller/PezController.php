@@ -72,7 +72,7 @@ class PezController extends AbstractController
             $entityManager->persist($pez);
             $entityManager->flush();
 
-            return $this->redirect($this->generateUrl('pez.editar'));
+            return $this->redirectToRoute('pez.detalles', array('id' => $pez->getId()));
         }
 
         return $this->render('pez/crear.html.twig', [
@@ -130,7 +130,9 @@ class PezController extends AbstractController
             return $this->redirectToRoute('pez.detalles', array('id' => $id));
         }
 
-        return $this->redirectToRoute('pez.detalles', array('id' => $id));
+        return $this->render('pez/editar.html.twig',array(
+            'form'=>$form->createView()
+        ));
     }
 
     #[Route('/borrar/{id}', name: 'pez.borrar')]
