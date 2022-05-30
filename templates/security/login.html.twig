@@ -13,7 +13,6 @@
             Has iniciado sesion como {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Salir</a>
         </div>
     {% endif %}
-<div class="container">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -41,5 +40,4 @@
     </button>
     
 </form>
-</div>
 {% endblock %}
