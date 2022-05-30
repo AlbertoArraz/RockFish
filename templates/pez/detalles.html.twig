@@ -36,9 +36,12 @@
 				</div>
 				{{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
 				{{ form_end(form) }}
-				<a href="{{ path('pez.editar', {id: pez.id}) }}" class="btn btn-info">Editar pez</a>
-				<a href="{{ path('pez.borrar', {id: pez.id}) }}" class="btn btn-danger">Borrar pez</a>
-				
+				{% if is_granted('ROLE_ADMIN') %}
+					<a href="{{ path('pez.editar', {id: pez.id}) }}" class="btn btn-info">Editar pez</a>
+					<a href="{{ path('pez.borrar', {id: pez.id}) }}" class="btn btn-danger">Borrar pez</a>
+				{% endif %}
+
+
 			</div>
 		</div>
 	</div>

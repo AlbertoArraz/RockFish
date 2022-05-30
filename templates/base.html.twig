@@ -20,9 +20,15 @@
 				<a href="{{ path('home') }}" class="navbar-brand">
 					Rock Fish
 				</a>
-				<a href="{{ path('cart') }}" class="btn btn-light">
+				<div class="justify-content-end ">
+				<a href="{{ path('app_login') }}" class="btn btn-light mx-1">
+					<img src="{{asset('img/usuario.png')}}" width="26">
+				</a>
+				
+				<a href="{{ path('cart') }}" class="btn btn-light mx-1">
 					<img src="{{asset('img/carrito-de-compras.png')}}" width="26">
 				</a>
+				</div>
 			</nav>
 		{% endblock %}
 
