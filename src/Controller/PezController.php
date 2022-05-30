@@ -35,7 +35,7 @@ class PezController extends AbstractController
                 ->addItem($item)
                 ->setUpdatedAt(new \DateTime());
 
-            $cartManager->save($cart);
+            $cartManager->guardar($cart);
 
             return $this->redirectToRoute('pez.detalles', ['id' => $pez->getId()]);
         }
@@ -99,7 +99,7 @@ class PezController extends AbstractController
             ->add('imagen', FileType::class)
             ->add('tipo', EntityType::class, ['class' => Tipo::class])
             ->add(
-                'save',
+                'guardar',
                 SubmitType::class,
                 array('label' => 'Editar Pez')
             )

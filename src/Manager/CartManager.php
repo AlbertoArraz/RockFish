@@ -66,7 +66,7 @@ class CartManager
      *
      * @param Order $cart
      */
-    public function save(Order $cart): void
+    public function guardar(Order $cart): void
     {
         // Persist in database
         $this->entityManager->persist($cart);
