@@ -130,9 +130,7 @@ class PezController extends AbstractController
             return $this->redirectToRoute('pez.detalles', array('id' => $id));
         }
 
-        return $this->render('pez/editar.html.twig',array(
-            'form'=>$form->createView()
-        ));
+        return $this->redirectToRoute('pez.detalles', array('id' => $id));
     }
 
     #[Route('/borrar/{id}', name: 'pez.borrar')]
