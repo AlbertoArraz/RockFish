@@ -92,6 +92,8 @@ class PezController extends AbstractController
                 'No existe ningun pez con id ' . $id
             );
         }
+        $pez->setImagen("");
+
         $form = $this->createFormBuilder($pez)
             ->add('nombre')
             ->add('precio')
@@ -99,7 +101,7 @@ class PezController extends AbstractController
             ->add('imagen', FileType::class)
             ->add('tipo', EntityType::class, ['class' => Tipo::class])
             ->add(
-                'guardar',
+                'save',
                 SubmitType::class,
                 array('label' => 'Editar Pez')
             )
