@@ -19,7 +19,7 @@ class CartType extends AbstractType
             ->add('items', CollectionType::class, [
                 'entry_type' => CartItemType::class,
             ])
-            ->add('guardar', SubmitType::class);
+            ->add('pedir', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)
