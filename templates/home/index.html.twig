@@ -15,8 +15,7 @@
                         <h5 class="card-title m-0">{{ pez.nombre }}</h5>
                         <p class="card-text">{{ pez.descripcion }}</p>
                         <div class="d-flex justify-content-between align-item-center">
-                            <a href="{{ path('pez.detalles', {id: pez.id}) }}" class="btn btn-dark">Ver detalles</a>
-
+                            <a href="{{ path('pez.detalles', {id: pez.id}) }}" class="btn btn-outline-dark">Ver detalles &nbsp<i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
                             <span class="h5 mt-auto">{{ pez.precio }} €</span>
                         </div>
                     </div>

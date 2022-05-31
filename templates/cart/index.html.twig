@@ -10,14 +10,14 @@
 			<div
 				class="row mt-4">
 				<!-- List of items -->
-				<div class="col-md-8">
+				<div class="col-md-8 pb-2">
 					{{ form_start(form) }}
-					<div class="card">
+					<div class="card p">
 						<div class="card-header bg-dark text-white d-flex">
 							<h5>Peces</h5>
 							<div class="ml-auto">
-								{{ form_widget(form.guardar, {'attr': {'class': 'btn btn-warning'}}) }}
-								<a href="{{ path('items.borrar', {id: form.items.vars.data.owner.id}) }}" class ="btn btn-light">Limpiar</a>
+								{{ form_widget(form.guardar, {'attr': {'class': 'btn btn-outline-warning'}}) }}
+								<a href="{{ path('items.borrar', {id: form.items.vars.data.owner.id}) }}" class ="btn btn-outline-light">Limpiar</a>
 							</div>
 						</div>
 						<ul class="list-group list-group-flush">
@@ -40,7 +40,7 @@
 													{{ form_errors(item.cantidad) }}
 												</div>
 											</div>
-											<a href="{{ path('item.borrar', {id: item.vars.data.id}) }}" class ="btn btn-dark btn-sm">Borrar</a>
+											<a href="{{ path('item.borrar', {id: item.vars.data.id}) }}" class ="btn  btn-outline-danger btn-md">Borrar</a>
 										</div>
 									</div>
 									<div class="flex-fill mr-2 text-right">

@@ -29,12 +29,21 @@
             'attr': {
                 'class': 'form-control ' ~ (form.cantidad.vars.valid ? '' : 'is-invalid')
             }
+			
         }) }}
+			{% if form.cantidad.vars.submitted and form.cantidad.vars.value != "" %}
+			<script>
+				swalWithBootstrapButtons.fire('Añadido al Carrito!','Tu pez se añadio correctamente!','success')
+				.then(function(){
+					$("#add_to_cart_cantidad").val("");
+				})
+			</script>
+			{% endif %}
 					<div class="invalid-feedback">
 						{{ form_errors(form.cantidad) }}
 					</div>
 				</div>
-				{{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
+				{{ form_widget(form.add, {'attr': {'class': 'btn btn-outline-warning w-25 text-dark'}}) }}
 				{{ form_end(form) }}
 				{% if is_granted('ROLE_ADMIN') %}
 					<a href="{{ path('pez.editar', {id: pez.id}) }}" class="btn btn-info">Editar pez</a>

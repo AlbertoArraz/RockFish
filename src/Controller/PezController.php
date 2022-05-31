@@ -36,8 +36,7 @@ class PezController extends AbstractController
                 ->setUpdatedAt(new \DateTime());
 
             $cartManager->guardar($cart);
-
-            return $this->redirectToRoute('pez.detalles', ['id' => $pez->getId()]);
+            //return $this->redirectToRoute('pez.detalles', ['id' => $pez->getId()]);
         }
         
         return $this->render('pez/detalles.html.twig', [
